@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Josefin+Sans:300,400);
 html{
 	scroll-behavior: smooth;
+	scroll-padding: 50px;
 }
 *{
 	margin: 0;
@@ -45,8 +46,11 @@ header {
 #welcome, #food_menu, #location{
 	width:100%;
 	float: left;
-	height: 100vh;
+	height:100vh ;
 
+}
+#food_menu, #location{
+	height:calc(100vh - 50px) ;
 }
 #welcome{
 	background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url("images/homeImage.png");
@@ -60,6 +64,8 @@ header {
 	background-color: black;
 	background-position: center center;
 	background-size: cover;
+	outline:1px solid white;
+	outline-offset: -25px;
 
 }
 
@@ -73,81 +79,103 @@ header {
 
 }
 
+#map-image{
+	border-radius: 50%;
+	width:360px
+}
+#welcome div p {
+		border-style: solid;
+		border-width: 1px;
+		padding:20px;
+		border-radius: 15px;
+		position: absolute;
+		font-family: monospace;
+		top:75%;
+		display: block;
+		left:50%;
+		color: white;
+		text-align: center;
+		transform: translate(-50%,0%);
+	}
 @media screen and (min-width: 1080px){
 	h1{
-		position: absolute;
-		margin-top:20px;
-		top: 25%;
-		left: 50%;
-		text-align: left;
-		transform: translate(-50%, -50%);
 		color: #fff;
+		display: flex;
+		justify-content: center;
+		text-align: center;
+		padding-top: 125px;
 		font-size:72px;
 		font-weight: 100;
 	}
 	#menu-header{
-		position: relative;
-		margin-top:20px;
+		display: flex;
+		justify-content: center;
 		text-align: center;
-		top:15%;
-		left: 50%;
+		padding-top:125px;
 		color: #fff;
 		font-size:52px;
 		font-weight: 100;
-		transform: translate(-50%, -50%);
 	}
 	#location-header{
-		position: absolute;
-		margin-top:20px;
+		display:flex;
+		justify-content: center;
 		text-align: center;
-		top:215%;
-		left: 50%;
+		padding-top:125px;
 		color: #fff;
 		font-size:52px;
 		font-weight: 100;
-		transform: translate(-50%, -50%);
 	}
 	.card{
 		width:150px;
 	}
 
+
 }
 @media screen and (max-width: 1080px){
 	h1{
-		position: absolute;
-		margin-top:20px;
-		top: 30%;
-		left: 50%;
 		text-align: left;
-		transform: translate(-50%, -50%);
 		color: #fff;
+		display: flex;
+		justify-content: center;
+		text-align: center;
+		padding-top: 150px;
 		font-size:48px;
 		font-weight: 100;
 	}
+
 	#menu-header{
-		position: relative;
-		margin-top:20px;
+		display: flex;
+		justify-content: center;
 		text-align: center;
-		top:15%;
-		left: 50%;
+		padding-top:125px;
 		color: #fff;
 		font-size:42px;
 		font-weight: 100;
-		transform: translate(-50%, -50%);
 	}
 	#location-header{
-		position: absolute;
-		margin-top:20px;
+		display: flex;
+		justify-content: center;
+		padding-top: 125px;
 		text-align: center;
-		top:215%;
-		left: 50%;
 		color: #fff;
-		font-size:52px;
+		font-size:42px;
 		font-weight: 100;
-		transform: translate(-50%, -50%);
 	}
 	.card{
 		width: 125px;
+	}
+	#map-image{
+		width: 250px;
+	}
+	
+	
+}
+@media screen and (max-height: 720px){
+	#welcome, #food_menu, #location{
+		height: 720px;
+	}
+	.card{
+		width: 100px;
 	}
 }
 .scroll {
@@ -198,6 +226,7 @@ header {
 	background-color:  rgba(0, 0, 0, 0.3);
 	color:white;
 	border-radius:15px;
+	margin:10px;
 }
 
 /* On mouse-over, add a deeper shadow */
@@ -214,12 +243,12 @@ header {
 	justify-content: center;
 }
 .card-container{
-	position: relative;
-	top: 25%;
 	width: 100%;
+	padding: 50px;
 }
+.map{
+	display: flex;
+	justify-content: center;
+	padding: 50px;
 
-
-.card{
-	margin:10px;
 }
